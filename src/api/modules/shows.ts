@@ -1,15 +1,10 @@
 import { get } from '../fetch';
 
-export enum SHOW_GENRES {
-  DRAMA = 'Drama',
-  SCIENCE_FICTION = 'Science-Fiction',
-  THRILLER = 'THRILLER',
-}
-
 export type Show = {
   id: number;
   name: string;
-  genres: SHOW_GENRES[];
+  summary: string;
+  genres: string[];
   image: {
     medium: string;
   };
