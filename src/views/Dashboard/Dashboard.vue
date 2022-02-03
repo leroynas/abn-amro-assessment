@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <Row
+    <ShowRow
       v-for="category in categories"
       :key="category"
       :title="category"
@@ -13,18 +13,18 @@
 import { computed, defineComponent, onMounted } from 'vue';
 import { useStore } from 'vuex';
 
-import { Show, SHOW_GENRES } from '@/api/modules/shows';
+import { Show } from '@/api/modules/shows';
 import { RootState } from '@/store';
 
-import Row from './components/Row.vue';
+import ShowRow from './components/ShowRow.vue';
 
 type Grouped = {
-  [key in SHOW_GENRES]?: Show[];
+  [key: string]: Show[];
 };
 
 export default defineComponent({
   components: {
-    Row,
+    ShowRow,
   },
 
   setup() {

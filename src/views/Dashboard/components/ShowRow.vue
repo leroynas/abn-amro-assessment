@@ -1,13 +1,8 @@
 <template>
-  <span class="title">{{ title }}</span>
+  <span class="title">{{ title.replace('-', ' ') }}</span>
 
   <div class="row">
-    <Card
-      v-for="item in sorted"
-      :key="item.id"
-      :image="item.image.medium"
-      :rating="item.rating.average"
-    />
+    <ShowCard v-for="item in sorted" :key="item.id" :item="item" />
   </div>
 </template>
 
@@ -16,11 +11,11 @@ import { computed, defineComponent } from '@vue/runtime-core';
 
 import { Show } from '@/api/modules/shows';
 
-import Card from '../components/Card.vue';
+import ShowCard from './ShowCard.vue';
 
 export default defineComponent({
   components: {
-    Card,
+    ShowCard,
   },
 
   props: {
@@ -50,6 +45,7 @@ export default defineComponent({
 .row {
   display: flex;
   overflow-y: auto;
+  padding: 0.5rem 0;
 
   &:not(:last-child) {
     margin-bottom: 1rem;
@@ -62,8 +58,7 @@ export default defineComponent({
 
 .title {
   display: block;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 </style>
