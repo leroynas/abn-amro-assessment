@@ -1,6 +1,6 @@
 import { createStore } from 'vuex';
 
-import shows, { ShowState } from './shows';
+import shows, { ShowState } from './modules/shows';
 
 export type RootState = {
   shows: ShowState;
