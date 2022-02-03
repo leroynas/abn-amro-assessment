@@ -1,10 +1,16 @@
 <template>
-  <div class="show" v-if="item">
-    <img class="image" :src="item.image.medium" />
+  <div class="show">
+    <router-link class="back" :to="{ name: ROUTE_DASHBOARD }">
+      <fa-icon icon="arrow-left" />
+    </router-link>
 
-    <div class="content">
-      <span class="title">{{ item.name }}</span>
-      <div class="summary" v-html="item.summary" />
+    <div class="content" v-if="item">
+      <img class="image" :src="item.image.medium" />
+
+      <div>
+        <span class="title">{{ item.name }}</span>
+        <div class="summary" v-html="item.summary" />
+      </div>
     </div>
   </div>
 </template>
@@ -14,6 +20,7 @@ import { computed, defineComponent, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 
+import { ROUTE_DASHBOARD } from '@/router';
 import { RootState } from '@/store';
 
 export default defineComponent({
@@ -37,6 +44,7 @@ export default defineComponent({
     watch(route, fetchItem);
 
     return {
+      ROUTE_DASHBOARD,
       item,
     };
   },
@@ -45,20 +53,26 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .show {
-  display: flex;
-  align-items: flex-start;
   max-width: 50rem;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
-.image {
-  width: 13rem;
-  height: auto;
+.back {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .content {
-  margin-left: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.image {
+  width: 13rem;
+  height: auto;
+  margin-right: 2rem;
 }
 
 .title {

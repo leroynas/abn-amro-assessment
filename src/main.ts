@@ -1,5 +1,9 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowLeft,
+  faSearch,
+  faStar,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createApp } from 'vue';
 
@@ -9,6 +13,7 @@ import store from '@/store';
 
 library.add(faStar);
 library.add(faSearch);
+library.add(faArrowLeft);
 
 const app = createApp(App);
 
