@@ -39,11 +39,5 @@ export default defineComponent({
 .item {
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  text-decoration: none;
-  color: #000;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 </style>
