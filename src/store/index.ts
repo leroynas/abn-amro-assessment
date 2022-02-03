@@ -1,10 +1,10 @@
 import { createStore } from 'vuex';
 
-import shows, { State as ShowState } from './shows';
+import shows, { ShowState } from './shows';
 
-export interface State {
+export type RootState = {
   shows: ShowState;
-}
+};
 
 export default createStore({
   modules: {

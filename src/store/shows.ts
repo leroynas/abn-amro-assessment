@@ -3,11 +3,11 @@ import { ActionContext } from 'vuex';
 import api from '@/api';
 import { Show } from '@/api/modules/shows';
 
-import { State as RootState } from './';
+import { RootState } from './';
 
-export interface State {
+export type ShowState = {
   items: Show[];
-}
+};
 
 export default {
   namespaced: true,
@@ -17,7 +17,7 @@ export default {
   },
 
   mutations: {
-    setItems(state: State, items: Show[]): void {
+    setItems(state: ShowState, items: Show[]): void {
       state.items = items;
     },
   },
@@ -25,11 +25,9 @@ export default {
   actions: {
     async fetchItems({
       commit,
-    }: ActionContext<State, RootState>): Promise<void> {
+    }: ActionContext<ShowState, RootState>): Promise<void> {
       const items = await api.shows.index();
       commit('setItems', items);
     },
   },
-
-  getters: {},
 };

@@ -1,16 +1,24 @@
 import { get } from '../fetch';
 
-enum SHOW_GENRES {
+export enum SHOW_GENRES {
   DRAMA = 'Drama',
   SCIENCE_FICTION = 'Science-Fiction',
   THRILLER = 'THRILLER',
 }
 
 export type Show = {
-  genres: SHOW_GENRES;
+  id: number;
+  name: string;
+  genres: SHOW_GENRES[];
+  image: {
+    medium: string;
+  };
+  rating: {
+    average: number;
+  };
 };
 
-const index = (): Promise<Show> => get('shows');
+const index = (): Promise<Show[]> => get('shows');
 
 export default {
   index,
