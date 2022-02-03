@@ -3,6 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
+  plugins: ['simple-import-sort'],
   extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
@@ -14,6 +15,8 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
+    'prettier/prettier': 'error',
+    'simple-import-sort/imports': 'error',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },

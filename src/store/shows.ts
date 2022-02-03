@@ -1,6 +1,7 @@
+import { ActionContext } from 'vuex';
+
 import api from '@/api';
 import { Show } from '@/api/modules/shows';
-import { ActionContext } from 'vuex';
 
 import { State as RootState } from './';
 
