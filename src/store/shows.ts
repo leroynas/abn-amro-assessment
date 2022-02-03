@@ -2,8 +2,7 @@ import { ActionContext } from 'vuex';
 
 import api from '@/api';
 import { Show } from '@/api/modules/shows';
-
-import { RootState } from './';
+import { RootState } from '@/store';
 
 export type ShowState = {
   items: Show[];
