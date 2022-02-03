@@ -46,7 +46,9 @@ export default defineComponent({
     const categories = computed(() => Object.keys(grouped.value));
 
     onMounted(() => {
-      store.dispatch('shows/fetchItems');
+      if (!store.state.shows.items.length) {
+        store.dispatch('shows/fetchItems');
+      }
     });
 
     return {
