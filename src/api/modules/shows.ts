@@ -22,11 +22,16 @@ const index = (): Promise<Show[]> => {
   return get('shows');
 };
 
+const show = (id: number): Promise<Show> => {
+  return get(`shows/${id}`);
+};
+
 const search = (query: string): Promise<SearchResult[]> => {
   return get(`search/shows?q=${query}`);
 };
 
 export default {
   index,
+  show,
   search,
 };

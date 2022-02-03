@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 
@@ -27,6 +27,15 @@ export default defineComponent({
       ),
     );
 
+    const fetchItem = () => {
+      if (!item.value) {
+        store.dispatch('shows/fetchItem', route.params.id);
+      }
+    };
+
+    onMounted(fetchItem);
+    watch(route, fetchItem);
+
     return {
       item,
     };
@@ -37,6 +46,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .show {
   display: flex;
+  align-items: flex-start;
   max-width: 50rem;
   margin: 0 auto;
   padding: 2rem 0;
