@@ -13,8 +13,20 @@ export type Show = {
   };
 };
 
-const index = (): Promise<Show[]> => get('shows');
+export type SearchResult = {
+  score: number;
+  show: Show;
+};
+
+const index = (): Promise<Show[]> => {
+  return get('shows');
+};
+
+const search = (query: string): Promise<SearchResult[]> => {
+  return get(`search/shows?q=${query}`);
+};
 
 export default {
   index,
+  search,
 };
