@@ -40,6 +40,7 @@ export default defineComponent({
   position: relative;
   border-radius: 0.25rem;
   min-width: 10rem;
+  width: 10rem;
   overflow: hidden;
   transition: all 150ms;
 
