@@ -14,9 +14,8 @@ import { computed, defineComponent, onMounted } from 'vue';
 import { useStore } from 'vuex';
 
 import { Show } from '@/api/modules/shows';
+import ShowRow from '@/components/ShowRow.vue';
 import { RootState } from '@/store';
-
-import ShowRow from './components/ShowRow.vue';
 
 type Grouped = {
   [key: string]: Show[];
