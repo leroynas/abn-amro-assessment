@@ -1,0 +1,12 @@
+{
+  "id": 169,
+  "name": "Breaking bad",
+  "summary": "<p>This is the summary</p>",
+  "genres": ["Action", "Crime"],
+  "image": {
+    "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg"
+  },
+  "rating": {
+    "average": 9.2
+  }
+}
