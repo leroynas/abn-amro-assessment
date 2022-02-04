@@ -12,6 +12,23 @@ For the architecture I chose for a simple approach, because the application is v
 - fortawesome -> icon package.
 - body-scroll-lock -> Only easy and safe way to lock the body when a modal is opened.
 
+## Environment Specs
+
+```
+  System:
+    OS: macOS 12.0.1
+    CPU: (10) arm64 Apple M1 Pro
+  Binaries:
+    Node: 17.2.0 - /opt/homebrew/bin/node
+    Yarn: 1.22.17 - /opt/homebrew/bin/yarn
+    npm: 8.1.4 - /opt/homebrew/bin/npm
+  Browsers:
+    Chrome: 97.0.4692.99
+    Edge: Not Found
+    Firefox: 95.0.2
+    Safari: 15.1
+```
+
 ## Project setup
 
 ```
