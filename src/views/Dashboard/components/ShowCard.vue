@@ -1,9 +1,5 @@
 <template>
-  <router-link
-    class="card"
-    tag="div"
-    :to="{ name: ROUTE_SHOW, params: { id: item.id } }"
-  >
+  <router-link class="card" :to="{ name: ROUTE_SHOW, params: { id: item.id } }">
     <img class="image" :src="item.image.medium" />
 
     <div class="meta">
