@@ -1,21 +1,11 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faArrowLeft,
-  faSearch,
-  faStar,
-  faTimes,
-} from '@fortawesome/free-solid-svg-icons';
+import './plugins/fortawesome';
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createApp } from 'vue';
 
 import App from '@/App.vue';
 import router from '@/router';
 import store from '@/store';
-
-library.add(faArrowLeft);
-library.add(faSearch);
-library.add(faStar);
-library.add(faTimes);
 
 const app = createApp(App);
 
