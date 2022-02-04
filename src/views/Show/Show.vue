@@ -55,7 +55,7 @@ export default defineComponent({
 .show {
   max-width: 50rem;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 .back {
@@ -66,13 +66,22 @@ export default defineComponent({
 
 .content {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
+
+  @media only screen and (min-width: 640px) {
+    flex-direction: row;
+  }
 }
 
 .image {
   width: 13rem;
   height: auto;
-  margin-right: 2rem;
+  margin: 0 auto 2rem;
+
+  @media only screen and (min-width: 640px) {
+    margin-right: 2rem;
+  }
 }
 
 .title {

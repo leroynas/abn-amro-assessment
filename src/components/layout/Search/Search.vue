@@ -2,6 +2,8 @@
   <teleport to="body">
     <div class="search" ref="root" @click="handleHide">
       <div class="content" @click.stop>
+        <fa-icon class="close" icon="times" @click="handleHide" />
+
         <input
           class="input"
           :class="{ 'has-items': items.length }"
@@ -92,7 +94,16 @@ export default defineComponent({
 
 .content {
   margin: 4rem auto 0;
-  width: 500px;
+  max-width: 500px;
+  padding: 0 1rem;
+}
+
+.close {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #fff;
 }
 
 .input {
