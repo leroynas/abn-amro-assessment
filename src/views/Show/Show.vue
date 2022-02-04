@@ -4,14 +4,7 @@
       <fa-icon icon="arrow-left" />
     </router-link>
 
-    <div class="content" v-if="item">
-      <img class="image" :src="item.image.medium" />
-
-      <div>
-        <span class="title">{{ item.name }}</span>
-        <div class="summary" v-html="item.summary" />
-      </div>
-    </div>
+    <Content :item="item" />
   </div>
 </template>
 
@@ -23,7 +16,13 @@ import { useStore } from 'vuex';
 import { ROUTE_DASHBOARD } from '@/router';
 import { RootState } from '@/store';
 
+import Content from './components/Content.vue';
+
 export default defineComponent({
+  components: {
+    Content,
+  },
+
   setup() {
     const route = useRoute();
     const store = useStore<RootState>();
