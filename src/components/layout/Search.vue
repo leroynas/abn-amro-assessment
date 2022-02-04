@@ -102,8 +102,13 @@ export default defineComponent({
   display: block;
   margin-left: auto;
   margin-bottom: 1rem;
+  cursor: pointer;
   font-size: 1.5rem;
   color: #fff;
+
+  &:hover {
+    color: #ccc;
+  }
 }
 
 .input {
