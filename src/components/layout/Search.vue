@@ -13,7 +13,7 @@
         />
 
         <div class="results" v-if="items.length">
-          <Item
+          <SearchItem
             v-for="item in items"
             :key="item.show.id"
             :item="item"
@@ -33,11 +33,11 @@ import { defineComponent, onBeforeUnmount, onMounted, ref } from 'vue';
 import api from '@/api';
 import { SearchResult } from '@/api/modules/shows';
 
-import Item from './Item.vue';
+import SearchItem from './SearchItem.vue';
 
 export default defineComponent({
   components: {
-    Item,
+    SearchItem,
   },
 
   emits: ['hide'],
