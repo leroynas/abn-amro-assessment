@@ -58,7 +58,7 @@ export default defineComponent({
 }
 
 .back {
-  display: block;
+  display: inline-block;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
