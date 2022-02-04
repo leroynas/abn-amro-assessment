@@ -34,7 +34,7 @@ export default defineComponent({
     );
 
     const fetchItem = () => {
-      if (!item.value) {
+      if (!item.value && route.params.id) {
         store.dispatch('shows/fetchItem', route.params.id);
       }
     };
